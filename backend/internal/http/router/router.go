@@ -21,7 +21,7 @@ import (
 
 func New(db *sql.DB, cfg config.Config) http.Handler {
 	r := chi.NewRouter()
-
+r.Use(httpmw.CORS(cfg.CORSAllowedOrigin))
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Recoverer)
@@ -76,7 +76,7 @@ func New(db *sql.DB, cfg config.Config) http.Handler {
 			r.Delete("/{id}", sshH.Delete)
 
 			// live terminal websocket
-			r.Get("/{id}/ws", sshWS.Connect)
+			
 
 			// known_hosts management
 			r.Get("/known-hosts", khH.List)
@@ -86,6 +86,11 @@ func New(db *sql.DB, cfg config.Config) http.Handler {
 
 		})
 	})
+	r.Group(func(r chi.Router) {
+    r.Use(httpmw.WSQueryTokenToAuthHeader)
+    r.Use(httpmw.JWTAuth(tokens))
+    r.Get("/api/v1/ssh/{id}/ws", sshWS.Connect)
+})
 
 	return r
 }

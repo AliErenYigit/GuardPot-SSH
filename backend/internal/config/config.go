@@ -24,6 +24,7 @@ type Config struct {
 	SSHKnownHostsPath   string
 	SSHWSMaxConn        int
 	SSHWSMaxConnPerUser int
+	 CORSAllowedOrigin string
 }
 
 func Load() (Config, error) {
@@ -60,6 +61,8 @@ func Load() (Config, error) {
 	if cfg.SSHConnectTimeoutSec <= 0 {
 		cfg.SSHConnectTimeoutSec = 10
 	}
+	cfg.CORSAllowedOrigin=getEnv("CORS_ALLOWED_ORIGIN", "http://localhost:5173")
+	
 
 	cfg.SSHKnownHostsPath = getEnv("SSH_KNOWN_HOSTS_PATH", "./data/known_hosts")
 	cfg.SSHWSMaxConn = getEnvInt("SSH_WS_MAX_CONN", 20)
