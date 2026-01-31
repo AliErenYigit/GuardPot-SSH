@@ -105,3 +105,19 @@ tarayıcı üzerinden canlı SSH terminali sunan bir full-stack SSH management p
 
 
 <img width="2130" height="860" alt="image" src="https://github.com/user-attachments/assets/ba722e60-d9b3-4d7b-b8db-491fb90f8923" />
+
+
+
+# **🤖 Yapay Zeka Kullanımı**
+
+Bu proje geliştirilirken, yapay zekâ destekli araçlar; mimari tasarım, hata ayıklama, güvenlik senaryolarının değerlendirilmesi ve kod kalitesinin artırılması amacıyla yardımcı bir rehber olarak kullandım.
+
+***Yapay zeka:***
+
+- Nihai karar verici olarak değil,
+
+- Geliştiricinin teknik değerlendirmelerini destekleyen bir araç olarak,
+
+- Üretilen kodların tamamı geliştirici tarafından incelenmiş, test edilmiş ve projeye özel olarak uyarlanmıştır.
+
+
