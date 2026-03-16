@@ -120,4 +120,4 @@ Bu proje geliştirilirken, yapay zekâ destekli araçlar; mimari tasarım, hata 
 
 - Üretilen kodların tamamı geliştirici tarafından incelenmiş, test edilmiş ve projeye özel olarak uyarlanmıştır.
 
-
+## https://www.alierenygt.com.tr/Projects/Detail/7
